@@ -1,0 +1,143 @@
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+.loader-container {
+  z-index: 1000;
+  position: fixed;
+  top:0; left:0;
+  width:100vw;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background: white;
+  /*background: radial-gradient(circle at 50% 40%, #14020a 0%, #0a0105 60%, #000 100%);*/
+  font-family: 'Bitcount Prop Double', sans-serif;
+  /*font-family: 'Anta', sans-serif;*/
+  overflow:hidden;
+  color:#fff;
+}
+
+.loader-container::before {
+  content:"";
+  position:absolute;
+  width:200%;
+  height:200%;
+  z-index:-2;
+}
+
+
+/* Shadow behind all words */
+.loader-container::after {
+  content:"EXPLO APP";
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  color: rgba(214,7,92,0.5);
+  filter: blur(20px);
+  opacity:0.5;
+  z-index:-2;
+}
+
+/* Loader words */
+.loader {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:1rem;
+  position:relative;
+  z-index:1;
+  text-align:center;
+}
+
+.loader .explo,
+.loader .app-art {
+  font-size: clamp(4rem, 12vw, 8rem);
+  font-weight:300;
+  text-transform:uppercase;
+  color:#fff;
+  position:relative;
+  z-index:1;
+  animation: pulseShadow 2s ease-in-out infinite;
+}
+
+/* Pulserende shadow via text-shadow */
+@keyframes pulseShadow {
+  0%,100% {
+    text-shadow: 
+      0 0 0.1vw rgba(214,7,92,0.4),
+      0 0 0.4vw rgba(214,7,92,0.3),
+      0 0 0.7vw rgba(214,7,92,0.2);
+  }
+  50% {
+    text-shadow: 
+      0 0 0.2vw rgba(214,7,92,0.5),
+      0 0 0.6vw rgba(214,7,92,0.4),
+      0 0 0.8vw rgba(214,7,92,0.3);
+      
+  }
+}
+
+/* APP/ART overlappende spans, gecentreerd */
+.loader .app-art {
+  position: relative;
+  width: max-content;
+  height:1em; 
+}
+
+.loader .app-art span {
+  position:absolute;
+  top:0;
+  left:50%;
+  transform: translateX(-50%);
+  width:auto;
+  text-align:center;
+  opacity:0;
+  animation: fadeSwap 4s infinite;
+  color:#fff;
+  z-index:1;
+}
+
+.loader .app-art span:nth-child(1) { animation-delay: 0s; }
+.loader .app-art span:nth-child(2) { animation-delay: 2s; }
+
+@keyframes fadeSwap {
+  0%,50%,100% { opacity:0; }
+  25% { opacity:1; }
+}
+
+/* Sweep full screen tussen woorden */
+.loader .sweep {
+  position:relative;
+  width:100vw;
+  height:3px;
+  margin:0.5rem 0;
+  overflow:hidden;
+  z-index:0;
+}
+
+.loader .sweep::before {
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(214,7,92,0.8),
+    rgba(214,7,92,0.5),
+    rgba(214,7,92,0.8),
+    transparent
+  );
+  animation: sweep 2s linear infinite;
+  filter: blur(4px);
+}
+
+@keyframes sweep {
+  0%   { transform: translateX(-100vw); }
+  100% { transform: translateX(100vw); }
+}

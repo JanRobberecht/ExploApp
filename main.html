@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Double:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/loader.css">
+
+  <title>Explo Art</title>
+</head>
+
+<body>
+
+  <button id="btn-arrow-up" aria-label="Arrow Up" title="Arrow Up">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19V5" />       <!-- vertical line of the arrow -->
+      <path d="M5 12l7-7 7 7" /> <!-- arrowhead -->
+    </svg>
+  </button>
+
+  <button id="btn-arrow-down" aria-label="Arrow Down" title="Arrow Down">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 5v14" />        <!-- vertical line of the arrow -->
+      <path d="M19 12l-7 7-7-7" /> <!-- arrowhead -->
+    </svg>
+  </button>
+
+  <!--div class="loader-container">
+    <div class="loader"></div>
+  </div-->
+
+  <div class="loader-container">
+    <div class="loader">
+      <div class="explo">EXPLO</div>
+      <div class="sweep"></div>
+      <div class="app-art">
+        <span>APP</span>
+        <span>ART</span>
+      </div>
+    </div>
+  </div>
+
+  <h1>Explo App</h1>
+
+   <details>
+   
+      <summary>Lesverschuivingen</summary>
+   </details>
+
+  <details>
+   
+      <summary>Toezichten</summary>
+
+
+    <div class="supervision-intro">
+      <label>Bijgewerkt</label>
+      <div id="supervision-update"></div>
+      <label>Zoek naam</label>
+      <div>
+        <select id="supervision-teacher">
+          <option value="" selected></option>
+        </select>
+        <button>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M3 6H21" stroke="black" stroke-width="2"/>
+            <rect x="6" y="6" width="12" height="14" rx="2" stroke="black" stroke-width="2"/>
+          </svg>
+        </button>
+      </div>
+      <label>Alle dagen</label>
+      <input type="checkbox" id="supervision-day">
+    </div>
+
+  
+    
+    <div class="table-container">
+      <table id="supervision-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Maandag</th>
+            <th>Dinsdag</th>
+            <th>Woensdag</th>
+            <th>Donderdag</th>
+            <th>Vrijdag</th>
+          
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><div>08:15 - 08:30</div><div>inkomhal</div></th><td id="A1"></td><td id="B1"></td><td id="C1"></td><td id="D1"></td><td id="E1"></td>
+          </tr>
+          <tr>
+            <th><div>10:10 - 10:25</div><div>speeltijd</div></th><td id="A2"></td><td id="B2"></td><td id="C2"></td><td id="D2"></td><td id="E2"></td>
+          </tr>
+          <tr>
+            <th><div>12:05 - 12:30</div><div>lunch 1e jaar</div></th><td id="A3"></td><td id="B3"></td><td id="C3"></td><td id="D3"></td><td id="E3"></td>
+          </tr>
+          <tr>
+            <th><div>12:05 - 12:30</div><div>lunch 2e jaar</div></th><td id="A4"></td><td id="B4"></td><td id="C4"></td><td id="D4"></td><td id="E4"></td>
+          </tr>
+          <tr>
+            <th><div>12:30 - 12:55</div><div>speeltijd</div></th><td id="A5"></td><td id="B5"></td><td id="C5"></td><td id="D5"></td><td id="E5"></td>
+          </tr>
+          <tr>
+            <th><div>14:35 - 14:50</div><div>speeltijd</div></th><td id="A6"></td><td id="B6"></td><td id="C6"></td><td id="D6"></td><td id="E6"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  
+
+  <script src="./js/main.js"></script>
+  <script src="./js/supervision.js"></script>
+</body>
+</html>

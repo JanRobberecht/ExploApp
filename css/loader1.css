@@ -1,0 +1,40 @@
+
+
+.aaloader-container {
+
+  position: fixed;   /* stays in place even when scrolling */
+  top: 0;
+  left: 0;
+  width: 100vw;      /* full viewport width */
+  height: 100vh;     /* full viewport height */
+  background-color: var(--greyVeryDarkOverlay);
+  z-index: 500;
+  display: none; /*flex;*/               /* use Flexbox to center */
+  justify-content: center;     /* horizontally center */
+  align-items: center;      
+}
+.aaloader {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--pinkKH); /*#fff */
+  box-shadow: 32px 0 var(--pinkKH), -32px 0 var(--pinkKH);
+  position: relative;
+  animation: flash 0.5s ease-out infinite alternate;
+}
+
+@keyframes flash {
+  0% {
+    background-color: var(--pinkVeryLight); /*#fff2 */
+    box-shadow: 32px 0 var(--pinkVeryLight), -32px 0 var(--pinkKH);
+  }
+  50% {
+    background-color: var(--pinkKH);
+    box-shadow: 32px 0 var(--pinkVeryLight), -32px 0 var(--pinkVeryLight);
+  }
+  100% {
+    background-color: var(--pinkVeryLight);
+    box-shadow: 32px 0 var(--pinkKH), -32px 0 var(--pinkVeryLight);
+  }
+}
+      
