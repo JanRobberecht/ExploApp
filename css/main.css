@@ -42,20 +42,35 @@ body {
 }
 
 button {
+  width: 40px;
+  height: 40px;
+  display: flex;             /* use flexbox */
+  align-items: center;       /* vertical center */
+  justify-content: center;   /* horizontal center */
+  font-size: large;
+  border: none;
+  background: none;
+  border-radius: 8px;
+  cursor: pointer; 
+  padding: 0
+
+}
+
+button.btn-arrows {
   position: fixed; 
   z-index: 400;
   background: var(--pinkVeryLightOverlay);
   border: none;
-  border-radius: 8px; 
   padding: 10px; 
-  cursor: pointer; 
-  display: inline-flex; 
-  align-items: center; 
-  justify-content: center;
 
 }
 
-button svg {
+button.btn-arrows i {
+  color: var(--pinkKHOverlay);
+  pointer-events: none;
+}
+
+/*button svg {
   width: 20px;
   height: 20px;
   color: var(--pinkKHOverlay);
@@ -64,7 +79,7 @@ button svg {
 
 button svg * {
   pointer-events: none;
-}
+}*/
 
 #btn-arrow-up {
   bottom: 65px;           
@@ -79,8 +94,12 @@ button svg * {
 }
 
 button:active {
-  background: var(--pinkLightOverlay);
   transform: scale(0.95); 
+}
+
+button.btn-arrows:active {
+  background: var(--pinkLightOverlay);
+
 }
 
 
@@ -99,33 +118,30 @@ summary {
   display: grid;
   grid-template-columns: max-content 1fr;
   gap: 10px 15px;
-  align-items: center;       /* verticale uitlijning */
-  justify-items: start;      /* **alles links uitlijnen** */
+  align-items: center;
   margin-bottom: 30px;
 }
 
-.teacher-container {
-  margin-bottom: 15px;
+#supervision-teacher-container {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+   width: 100%;  
 }
 
-.teacher-container {
-  display: flex;
-  align-items: baseline;       /* vertically align label and select */
-  gap: 10px;                 /* small space between them */
-  width: 100%;               /* full width of parent container */
-  margin-bottom: 15px;
+#supervision-teacher-container > select {
+  width: 100%;
+  min-width: 0; 
 }
 
-.teacher-container label {
-  white-space: nowrap;       /* prevent label from wrapping */
-  flex: 0 0 auto;            /* keep label natural width */
+#supervision-day {
+  justify-self: start;  /* left-align the checkbox */
 }
 
 select {
 /*.teacher-container select {*/
   flex: 1;                   /* take up remaining space */
   min-width: 0;              /* important: prevents overflow in some browsers */
-   margin-top: 5px;
   padding: 5px;
   width: 100%;
   font-family: 'Manrope', sans-serif;
@@ -138,6 +154,7 @@ select {
  
 }
 
+in
 
 /* Responsive container */
 .table-container {

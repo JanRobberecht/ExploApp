@@ -1,0 +1,14 @@
+# macOS files
+.DS_Store
+
+# Windows files
+Thumbs.db
+
+# Editor folders
+.vscode/
+.idea/
+*.swp
+
+# Google Drive
+desktop.ini
+
