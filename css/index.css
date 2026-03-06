@@ -195,7 +195,7 @@ select:focus { outline: none; border-color: var(--pink); }
 
 #supervision-teacher-container button{
   color: var(--greyDark);
-  
+  --pinkLight: rgba(214,7,92,0.1);   /* hover */
 }
 
 
