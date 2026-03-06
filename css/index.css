@@ -56,7 +56,7 @@
 /* RESET & BASE */
 
 * {
-  overscroll-behavior: none;
+  /*overscroll-behavior: none;*/
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -213,9 +213,12 @@ select:focus { outline: none; border-color: var(--pink); }
 /* TABLE CONTAINER */
 
 .table-container {
-  overflow-x: auto;
+   overflow-x: auto;
+  touch-action: pan-x;
+  
+ /* overflow-x: auto;
   overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch;*/
 }
 
 /* TABLE */
