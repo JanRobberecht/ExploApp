@@ -1,0 +1,13 @@
+        git init<br>
+        git config --local user.name "FirstnameLastname"<br>
+        git config --local user.email "ma@mail.com"<br>
+        git add --all<br>
+        git commit -m "first commit"<br>
+        git branch -M main<br>
+        git remote add origin https://github.com/{user}/{reponame}.git<br>
+        git push -u origin main<br>
+
+
+<p>git pull; git add --all; git status; git commit -m "A short meaningful message"; git push</p>
+
+30/03 - 2/04

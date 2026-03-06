@@ -240,11 +240,22 @@ thead th:first-child {
 
 div.selected-name,
 div.selected-name > span.replaced {
-  color: var(--electricBlue);
+  color: var(--accentPink); 
   font-weight: 700;
 }
 
-.striped { text-decoration: line-through; color: var(--greyMedium); }
-.replaced { color: var(--green); }
-.highlighted { color: var(--black); font-weight: 700; }
-.highlighted-blue { color: var(--electricBlue); }
+.striped { 
+  text-decoration: line-through; 
+  color: var(--greyMedium); 
+}
+.replaced { 
+  color: var(--electricBlue);
+  font-weight: 700; 
+}
+.highlighted { 
+  color: var(--accentPink); 
+  font-weight: 700; 
+}
+.highlighted-blue { 
+  color: var(--electricBlue); 
+}
