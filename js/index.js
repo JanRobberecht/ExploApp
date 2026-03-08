@@ -47,6 +47,28 @@ function giveErrorMessage(error) {
 }
 
 
+const scrollTable = document.querySelector(".table-container");
+
+function updateFade() {
+
+  const maxScroll =
+    scrollTable.scrollWidth - scrollTable.clientWidth;
+
+  if (scrollTable.scrollLeft >= maxScroll - 1) {
+    scrollTable.classList.remove("fade-right");
+    scrollTable.classList.add("no-fade");
+  } else {
+    scrollTable.classList.add("fade-right");
+    scrollTable.classList.remove("no-fade");
+  }
+
+}
+
+scrollTable.addEventListener("scroll", updateFade);
+window.addEventListener("load", updateFade);
+window.addEventListener("resize", updateFade);
+
+
 /* SCREEN */
 
 

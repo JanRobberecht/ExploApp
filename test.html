@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+  <title>Explo Art</title>
+
+  <style>
+  :root {
+    --pink: rgb(214, 7, 92);
+    --pinkLight: rgba(214,7,92,0.17);
+    --pinkLighter: rgba(214,7,92,0.1);
+    --electricBlue: rgb(0,102,255);
+    --greyDark: rgb(45,43,44);
+    --greyMedium: rgb(125,123,125);
+    --greyLight: rgb(245,245,245);
+    --white: rgb(255,255,255);
+    --shadowSoft: 0 4px 14px rgba(0,0,0,0.06);
+    --radius: 10px;
+  }
+
+  body {
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    line-height: 1.45;
+    color: var(--greyDark);
+    background: var(--greyLight);
+    padding: 14px;
+  }
+
+  h1 { color: var(--pink); font-weight: 800; margin-bottom: 20px; }
+
+  /* Supervision Grid Table */
+  .grid-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  mask-image: linear-gradient(to right, black, black calc(100% - 16px), transparent);
+  -webkit-mask-image: linear-gradient(to right, black, black calc(100% - 16px), transparent);
+}
+
+.grid-table {
+  display: grid;
+  grid-template-columns: 120px repeat(5, 120px);
+  width: max-content;
+  border-collapse: separate;
+  border-spacing: 4px;
+}
+
+/* Cells */
+.grid-table .cell {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid var(--greyMedium);
+  background: var(--white);
+}
+
+/* Header row */
+.grid-table .cell.header {
+  font-weight: 600;
+  background: var(--greyLight);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+/* Fixed first column */
+.grid-table .cell.fixed {
+  position: sticky;
+  left: 0;
+  background: var(--greyLight);
+  font-weight: 500;
+  z-index: 1;
+}
+
+/* Top-left corner cell */
+.grid-table .cell.corner {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  background: var(--greyLight);
+  font-weight: 600;
+}
+  </style>
+</head>
+<body>
+
+<h1>Explo App</h1>
+
+<details>
+  <summary>Toezichten</summary>
+
+  <div class="supervision-intro">
+    <label for="supervision-update">Bijgewerkt</label>
+    <div id="supervision-update"></div>
+
+    <label for="supervision-teacher">Zoek naam</label>
+    <div id="supervision-teacher-container">
+      <select id="supervision-teacher">
+        <option value="" selected></option>
+      </select>
+      <button><i class="fa-regular fa-trash-can"></i></button>
+    </div>
+
+    <label for="supervision-day">Alle dagen</label>
+    <input type="checkbox" id="supervision-day">
+  </div>
+
+  <!-- Grid Table -->
+  <div class="grid-table-wrapper" id="supervision-grid-wrapper">
+    <div class="grid-table" id="supervision-grid">
+      <!-- Header row -->
+      <div class="cell corner"></div>
+      <div class="cell header">Maandag</div>
+      <div class="cell header">Dinsdag</div>
+      <div class="cell header">Woensdag</div>
+      <div class="cell header">Donderdag</div>
+      <div class="cell header">Vrijdag</div>
+
+      <!-- Row 1 -->
+      <div class="cell fixed">08:15 - 08:30<br>inkomhal</div>
+      <div class="cell" id="A1"></div>
+      <div class="cell" id="B1"></div>
+      <div class="cell" id="C1"></div>
+      <div class="cell" id="D1"></div>
+      <div class="cell" id="E1"></div>
+
+      <!-- Row 2 -->
+      <div class="cell fixed">10:10 - 10:25<br>speeltijd</div>
+      <div class="cell" id="A2"></div>
+      <div class="cell" id="B2"></div>
+      <div class="cell" id="C2"></div>
+      <div class="cell" id="D2"></div>
+      <div class="cell" id="E2"></div>
+
+      <!-- Row 3 -->
+      <div class="cell fixed">12:05 - 12:30<br>lunch 1EXPLO</div>
+      <div class="cell" id="A3"></div>
+      <div class="cell" id="B3"></div>
+      <div class="cell" id="C3"></div>
+      <div class="cell" id="D3"></div>
+      <div class="cell" id="E3"></div>
+
+      <!-- Row 4 -->
+      <div class="cell fixed">12:05 - 12:30<br>lunch 1EXPLO2</div>
+      <div class="cell" id="A4"></div>
+      <div class="cell" id="B4"></div>
+      <div class="cell" id="C4"></div>
+      <div class="cell" id="D4"></div>
+      <div class="cell" id="E4"></div>
+
+      <!-- Row 5 -->
+      <div class="cell fixed">12:05 - 12:30<br>lunch 2e jaar</div>
+      <div class="cell" id="A5"></div>
+      <div class="cell" id="B5"></div>
+      <div class="cell" id="C5"></div>
+      <div class="cell" id="D5"></div>
+      <div class="cell" id="E5"></div>
+
+      <!-- Row 6 -->
+      <div class="cell fixed">12:30 - 12:55<br>speeltijd</div>
+      <div class="cell" id="A6"></div>
+      <div class="cell" id="B6"></div>
+      <div class="cell" id="C6"></div>
+      <div class="cell" id="D6"></div>
+      <div class="cell" id="E6"></div>
+
+      <!-- Row 7 -->
+      <div class="cell fixed">14:35 - 14:50<br>speeltijd</div>
+      <div class="cell" id="A7"></div>
+      <div class="cell" id="B7"></div>
+      <div class="cell" id="C7"></div>
+      <div class="cell" id="D7"></div>
+      <div class="cell" id="E7"></div>
+
+    </div>
+  </div>
+
+</details>
+
+<script>
+const scrollTable = document.getElementById("supervision-grid-wrapper");
+
+function updateFade() {
+  const maxScroll = scrollTable.scrollWidth - scrollTable.clientWidth;
+  if (scrollTable.scrollLeft >= maxScroll - 1) {
+    scrollTable.style.maskImage = 'none';
+    scrollTable.style.webkitMaskImage = 'none';
+  } else {
+    scrollTable.style.maskImage = 'linear-gradient(to right, black, black calc(100% - 16px), transparent)';
+    scrollTable.style.webkitMaskImage = 'linear-gradient(to right, black, black calc(100% - 16px), transparent)';
+  }
+}
+
+scrollTable.addEventListener("scroll", updateFade);
+window.addEventListener("load", updateFade);
+window.addEventListener("resize", updateFade);
+</script>
+
+</body>
+</html>
