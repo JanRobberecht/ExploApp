@@ -7,23 +7,23 @@ async function getData() {
     const response = await fetch(apiUrl);
     const result = await response.json();
 
+    console.log(result)
+
     // Controleer of de API call succesvol was
     if (!result.success) {
       throw new Error(result.error);
     }
 
  
-    const { teachers, schedule, updateBelgian } = result;
+    const { supervisingSchedule, supervisors} = result;
 
-    console.log("Teachers:", teachers);
-    console.log("Schedule:", schedule);
-    console.log("Update:", updateBelgian);
+ 
    
 
     // Vul de frontend elementen
-    fillTeachers(teachers);
-    fillSchedule(schedule);
-    fillUpdate(updateBelgian);
+    fillSupervisors(supervisors);
+    fillSupervisingSchedule(supervisingSchedule);
+
    
 
     loader.style.display = "none";

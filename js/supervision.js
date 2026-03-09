@@ -1,19 +1,19 @@
-function fillTeachers(teachers) {
+function fillSupervisors(supervisors) {
 
-  let teacherSelect = document.querySelector(".supervision-intro select")
+  let supervisorSelect = document.querySelector(".supervision-intro select")
 
-  teachers.forEach(t => {
+  supervisors.forEach(s => {
 
-    let teacherOption = document.createElement("option");
-    teacherOption.value = t;
-    teacherOption.innerHTML = t;
-    teacherSelect.appendChild(teacherOption);
+    let supervisorOption = document.createElement("option");
+    supervisorOption.value = s;
+    supervisorOption.innerHTML = s;
+    supervisorSelect.appendChild(supervisorOption);
   })
 }
 
-function fillSchedule(schedule) {
+function fillSupervisingSchedule(supervisingSchedule) {
 
-  schedule.forEach(s => {
+  supervisingSchedule.forEach(s => {
 
 
     let names = s[1].split(';').filter(item => item !== '');
@@ -36,9 +36,7 @@ function fillSchedule(schedule) {
   showDays(false)
 }
 
-function fillUpdate(update) {
-  document.getElementById("supervision-update").innerText = update
-}
+
 
 
 /* SCREEN */
